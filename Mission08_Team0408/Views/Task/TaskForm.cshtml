@@ -1,0 +1,74 @@
+@model Mission08_Team0408.Models.TaskItem
+
+@{
+    ViewData["Title"] = Model.TaskId == 0 ? "Add Task" : "Edit Task";
+}
+
+<div class="row justify-content-center">
+    <div class="col-12 col-md-8 col-lg-6">
+        <div class="card shadow-sm">
+            <div class="card-header bg-light">
+                <h2 class="h4 mb-0">@ViewData["Title"]</h2>
+            </div>
+
+            <div class="card-body">
+                <form method="post">
+                    <input type="hidden" asp-for="TaskId" />
+
+                    <div asp-validation-summary="All" class="text-danger mb-3"></div>
+
+                    <!-- Task -->
+                    <div class="mb-3">
+                        <label asp-for="Task" class="form-label"></label>
+                        <input asp-for="Task" class="form-control" />
+                        <span asp-validation-for="Task" class="text-danger"></span>
+                    </div>
+
+                    <!-- Due Date -->
+                    <div class="mb-3">
+                        <label asp-for="DueDate" class="form-label"></label>
+                        <input asp-for="DueDate" type="date" class="form-control" />
+                        <span asp-validation-for="DueDate" class="text-danger"></span>
+                    </div>
+
+                    <!-- Quadrant -->
+                    <div class="mb-3">
+                        <label asp-for="Quadrant" class="form-label"></label>
+                        <select asp-for="Quadrant" class="form-select">
+                            <option value="">-- Select Quadrant --</option>
+                            <option value="1">Quadrant I (Important / Urgent)</option>
+                            <option value="2">Quadrant II (Important / Not Urgent)</option>
+                            <option value="3">Quadrant III (Not Important / Urgent)</option>
+                            <option value="4">Quadrant IV (Not Important / Not Urgent)</option>
+                        </select>
+                        <span asp-validation-for="Quadrant" class="text-danger"></span>
+                    </div>
+
+                    <!-- Category dropdown -->
+                    <div class="mb-3">
+                        <label asp-for="CategoryId" class="form-label"></label>
+                        <select asp-for="CategoryId" asp-items="ViewBag.Categories" class="form-select">
+                            <option value="">-- Select Category --</option>
+                        </select>
+                        <span asp-validation-for="CategoryId" class="text-danger"></span>
+                    </div>
+
+                    <!-- Completed -->
+                    <div class="form-check mb-4">
+                        <input asp-for="Completed" class="form-check-input" />
+                        <label asp-for="Completed" class="form-check-label"></label>
+                    </div>
+
+                    <div class="d-flex gap-2">
+                        <button type="submit" class="btn btn-primary">Save Task</button>
+                        <a asp-controller="Task" asp-action="Quadrants" class="btn btn-outline-secondary">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
