@@ -6,9 +6,9 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-// ✅ ADD THIS: register your DbContext (database connection)
+// Register DbContext using SQLite
 builder.Services.AddDbContext<Mission08Context>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("Mission08Connection")));
+    options.UseSqlite(builder.Configuration.GetConnectionString("Mission08Connection")));
 
 // ✅ ADD THIS: register your repository (so controllers can request it)
 builder.Services.AddScoped<ITaskRepository, EFTaskRepository>();

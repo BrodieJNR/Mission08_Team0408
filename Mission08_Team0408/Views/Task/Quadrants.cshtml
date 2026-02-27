@@ -12,7 +12,7 @@
 <!-- Page header -->
 <div class="d-flex justify-content-between align-items-center mb-4">
     <h1 class="h3 mb-0">Task Quadrants</h1>
-    <a asp-controller="Home" asp-action="Add" class="btn btn-primary">+ Add Task</a>
+    <a asp-controller="Task" asp-action="Add" class="btn btn-primary">+ Add Task</a>
 </div>
 
 <!-- 2×2 Quadrant grid -->
@@ -51,12 +51,12 @@
                                         </div>
                                     </div>
                                     <div class="d-flex gap-1 flex-shrink-0">
-                                        <form method="post" asp-controller="Home" asp-action="MarkComplete" asp-route-id="@task.TaskId">
+                                        <form method="post" asp-controller="Task" asp-action="MarkComplete" asp-route-id="@task.TaskItemId">
                                             <button type="submit" class="btn btn-success btn-sm" title="Mark as Completed">&#10003; Done</button>
                                         </form>
-                                        <a asp-controller="Home" asp-action="Edit" asp-route-id="@task.TaskId"
+                                        <a asp-controller="Task" asp-action="Edit" asp-route-id="@task.TaskItemId"
                                            class="btn btn-outline-primary btn-sm" title="Edit Task">Edit</a>
-                                        <form method="post" asp-controller="Home" asp-action="Delete" asp-route-id="@task.TaskId"
+                                        <form method="post" asp-controller="Task" asp-action="Delete" asp-route-id="@task.TaskItemId"
                                               onsubmit="return confirm('Are you sure you want to delete this task?');">
                                             <button type="submit" class="btn btn-outline-danger btn-sm" title="Delete Task">Delete</button>
                                         </form>
@@ -103,12 +103,12 @@
                                         </div>
                                     </div>
                                     <div class="d-flex gap-1 flex-shrink-0">
-                                        <form method="post" asp-controller="Home" asp-action="MarkComplete" asp-route-id="@task.TaskId">
+                                        <form method="post" asp-controller="Task" asp-action="MarkComplete" asp-route-id="@task.TaskItemId">
                                             <button type="submit" class="btn btn-success btn-sm" title="Mark as Completed">&#10003; Done</button>
                                         </form>
-                                        <a asp-controller="Home" asp-action="Edit" asp-route-id="@task.TaskId"
+                                        <a asp-controller="Task" asp-action="Edit" asp-route-id="@task.TaskItemId"
                                            class="btn btn-outline-primary btn-sm" title="Edit Task">Edit</a>
-                                        <form method="post" asp-controller="Home" asp-action="Delete" asp-route-id="@task.TaskId"
+                                        <form method="post" asp-controller="Task" asp-action="Delete" asp-route-id="@task.TaskItemId"
                                               onsubmit="return confirm('Are you sure you want to delete this task?');">
                                             <button type="submit" class="btn btn-outline-danger btn-sm" title="Delete Task">Delete</button>
                                         </form>
@@ -155,12 +155,12 @@
                                         </div>
                                     </div>
                                     <div class="d-flex gap-1 flex-shrink-0">
-                                        <form method="post" asp-controller="Home" asp-action="MarkComplete" asp-route-id="@task.TaskId">
+                                        <form method="post" asp-controller="Task" asp-action="MarkComplete" asp-route-id="@task.TaskItemId">
                                             <button type="submit" class="btn btn-success btn-sm" title="Mark as Completed">&#10003; Done</button>
                                         </form>
-                                        <a asp-controller="Home" asp-action="Edit" asp-route-id="@task.TaskId"
+                                        <a asp-controller="Task" asp-action="Edit" asp-route-id="@task.TaskItemId"
                                            class="btn btn-outline-primary btn-sm" title="Edit Task">Edit</a>
-                                        <form method="post" asp-controller="Home" asp-action="Delete" asp-route-id="@task.TaskId"
+                                        <form method="post" asp-controller="Task" asp-action="Delete" asp-route-id="@task.TaskItemId"
                                               onsubmit="return confirm('Are you sure you want to delete this task?');">
                                             <button type="submit" class="btn btn-outline-danger btn-sm" title="Delete Task">Delete</button>
                                         </form>
@@ -207,12 +207,12 @@
                                         </div>
                                     </div>
                                     <div class="d-flex gap-1 flex-shrink-0">
-                                        <form method="post" asp-controller="Home" asp-action="MarkComplete" asp-route-id="@task.TaskId">
+                                        <form method="post" asp-controller="Task" asp-action="MarkComplete" asp-route-id="@task.TaskItemId">
                                             <button type="submit" class="btn btn-success btn-sm" title="Mark as Completed">&#10003; Done</button>
                                         </form>
-                                        <a asp-controller="Home" asp-action="Edit" asp-route-id="@task.TaskId"
+                                        <a asp-controller="Task" asp-action="Edit" asp-route-id="@task.TaskItemId"
                                            class="btn btn-outline-primary btn-sm" title="Edit Task">Edit</a>
-                                        <form method="post" asp-controller="Home" asp-action="Delete" asp-route-id="@task.TaskId"
+                                        <form method="post" asp-controller="Task" asp-action="Delete" asp-route-id="@task.TaskItemId"
                                               onsubmit="return confirm('Are you sure you want to delete this task?');">
                                             <button type="submit" class="btn btn-outline-danger btn-sm" title="Delete Task">Delete</button>
                                         </form>
