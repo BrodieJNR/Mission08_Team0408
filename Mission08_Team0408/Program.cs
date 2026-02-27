@@ -1,7 +1,17 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Mission08_Team0408.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// ✅ ADD THIS: register your DbContext (database connection)
+builder.Services.AddDbContext<Mission08Context>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("Mission08Connection")));
+
+// ✅ ADD THIS: register your repository (so controllers can request it)
+builder.Services.AddScoped<ITaskRepository, EFTaskRepository>();
 
 var app = builder.Build();
 
@@ -24,6 +34,5 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}")
     .WithStaticAssets();
-
 
 app.Run();
