@@ -3,11 +3,13 @@
 @{
     ViewData["Title"] = "Quadrants View";
 
-    var q1 = Model.Where(t => t.Quadrant == 1).ToList();
-    var q2 = Model.Where(t => t.Quadrant == 2).ToList();
-    var q3 = Model.Where(t => t.Quadrant == 3).ToList();
-    var q4 = Model.Where(t => t.Quadrant == 4).ToList();
+    // Add null check and empty model check
+    var q1 = Model != null ? Model.Where(t => t.Quadrant == 1).ToList() : new List<TaskItem>();
+    var q2 = Model != null ? Model.Where(t => t.Quadrant == 2).ToList() : new List<TaskItem>();
+    var q3 = Model != null ? Model.Where(t => t.Quadrant == 3).ToList() : new List<TaskItem>();
+    var q4 = Model != null ? Model.Where(t => t.Quadrant == 4).ToList() : new List<TaskItem>();
 }
+
 
 <!-- Page header -->
 <div class="d-flex justify-content-between align-items-center mb-4">

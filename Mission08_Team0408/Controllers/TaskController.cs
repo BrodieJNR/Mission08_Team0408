@@ -19,11 +19,10 @@ namespace Mission08_Team0408.Controllers
         // GET /Task/Quadrants
         public IActionResult Quadrants()
         {
-            var tasks = _repository.TaskItems
-                .Where(t => !t.Completed)
-                .ToList();
+            var tasks = _repository?.TaskItems?.Where(t => !t.Completed).ToList() ?? new List<TaskItem>();
             return View(tasks);
         }
+
 
         // GET /Task/Add
         public IActionResult Add()
